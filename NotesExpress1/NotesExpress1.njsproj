@@ -32,6 +32,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="public\javascripts\demo\demo.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="public\javascripts\jquery-ui-1.12.1.custom\external\jquery\jquery.js" />
     <Compile Include="public\javascripts\jquery-ui-1.12.1.custom\jquery-ui.js" />
     <Compile Include="public\javascripts\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
@@ -60,6 +63,7 @@
     <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
+    <Content Include="public\favicon.ico" />
     <Content Include="public\javascripts\jquery-ui-1.12.1.custom\AUTHORS.txt" />
     <Content Include="public\javascripts\jquery-ui-1.12.1.custom\images\ui-icons_444444_256x240.png" />
     <Content Include="public\javascripts\jquery-ui-1.12.1.custom\images\ui-icons_555555_256x240.png" />
@@ -80,6 +84,9 @@
     <Content Include="public\javascripts\jsgrid-1.5.3\jsgrid-theme.min.css" />
     <Content Include="public\javascripts\jsgrid-1.5.3\jsgrid.css" />
     <Content Include="public\javascripts\jsgrid-1.5.3\jsgrid.min.css" />
+    <Content Include="public\shtml\testgrid.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
     <Content Include="views\index.pug" />
@@ -96,6 +103,8 @@
     <Folder Include="public\javascripts\jquery-ui-1.12.1.custom\images\" />
     <Folder Include="public\javascripts\jsgrid-1.5.3\" />
     <Folder Include="public\javascripts\jsgrid-1.5.3\i18n\" />
+    <Folder Include="public\javascripts\demo\" />
+    <Folder Include="public\shtml\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="Scripts\" />
