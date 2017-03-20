@@ -53,6 +53,12 @@
     <Compile Include="public\javascripts\jsgrid-1.5.3\i18n\jsgrid-zh-tw.js" />
     <Compile Include="public\javascripts\jsgrid-1.5.3\jsgrid.js" />
     <Compile Include="public\javascripts\jsgrid-1.5.3\jsgrid.min.js" />
+    <Compile Include="public\javascripts\noteslist\noteslist.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="views\noteslist.pug">
+      <SubType>Code</SubType>
+    </Content>
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="routes\index.ts" />
     <TypeScriptCompile Include="routes\user.ts" />
@@ -104,6 +110,7 @@
     <Folder Include="public\javascripts\jsgrid-1.5.3\" />
     <Folder Include="public\javascripts\jsgrid-1.5.3\i18n\" />
     <Folder Include="public\javascripts\demo\" />
+    <Folder Include="public\javascripts\noteslist\" />
     <Folder Include="public\shtml\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
