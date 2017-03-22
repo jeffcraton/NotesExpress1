@@ -56,7 +56,13 @@
     <Compile Include="public\javascripts\noteslist\noteslist.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\javascripts\viewnote\viewnote.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Content Include="views\noteslist.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\viewnote.pug">
       <SubType>Code</SubType>
     </Content>
     <TypeScriptCompile Include="app.ts" />
@@ -110,6 +116,7 @@
     <Folder Include="public\javascripts\jsgrid-1.5.3\" />
     <Folder Include="public\javascripts\jsgrid-1.5.3\i18n\" />
     <Folder Include="public\javascripts\demo\" />
+    <Folder Include="public\javascripts\viewnote\" />
     <Folder Include="public\javascripts\noteslist\" />
     <Folder Include="public\shtml\" />
     <Folder Include="public\stylesheets\" />
