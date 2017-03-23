@@ -6,5 +6,8 @@ $(document).ready(function () {
     //
     // execute after the page has been loaded
     //
-    tinymce.init({ selector: 'textarea' });
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+    }); +
+
 });
