@@ -1,9 +1,23 @@
 ﻿extends layout
 
 block content
-  h1 View a Note
 
-  div(id='editor') Greetings.
+  h1 View a Note
+  label Creation Date:
+  div(id='currentdate')
+  
+  br
+
+  label Subject:  
+  br
+  input(type='text', id='notesubject', name='f1_notesubject')
+  br
+  br
+  span(class='ui-icon ui-icon-disk', id='icoSave', title='Save this note')
+  span(class='ui-icon ui-icon-trash', id='icoTrash', title='Delete this note')
+  div(id='editor') Note text
+
+  br
 
   script(type='text/javascript' src='https://cdn.quilljs.com/1.2.2/quill.js')
   script(type='text/javascript' src='/javascripts/viewnote/viewnote.js')
