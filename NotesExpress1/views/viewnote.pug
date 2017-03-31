@@ -13,8 +13,15 @@ block content
   input(type='text', id='notesubject', name='f1_notesubject')
   br
   br
-  span(class='ui-icon ui-icon-disk', id='icoSave', title='Save this note')
-  span(class='ui-icon ui-icon-trash', id='icoTrash', title='Delete this note')
+
+  button(class='ui-button ui-widget ui-corner-all', id='icoSave', title='Save changes') 
+    span(class='ui-icon ui-icon-disk') 
+    span Save 
+
+  button(class='ui-button ui-widget ui-corner-all', id='icoTrash', title='Delete this note') 
+    span(class='ui-icon ui-icon-trash') 
+    span Delete 
+
   div(id='editor') Note text
 
   br

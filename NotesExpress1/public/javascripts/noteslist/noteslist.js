@@ -33,5 +33,7 @@ $(document).ready(function () {
             { name: "id", type: "text", visible: false }
         ]
     });
-
+    $("#icoCreate").click(function () {
+        window.location.href = "/addnote";
+    });
 });

@@ -1,0 +1,22 @@
+﻿extends layout
+
+block content
+
+  h1 Add a new Note
+
+  label Subject:  
+  br
+  input(type='text', id='notesubject', name='f1_notesubject')
+  br
+  br
+  button(class='ui-button ui-widget ui-corner-all', id='icoSave', title='Save this note') 
+    span(class='ui-icon ui-icon-disk') 
+    span Save 
+
+  div(id='editor') Note text
+
+  br
+
+  script(type='text/javascript' src='https://cdn.quilljs.com/1.2.2/quill.js')
+  script(type='text/javascript' src='/javascripts/addnote/addnote.js')
+  
