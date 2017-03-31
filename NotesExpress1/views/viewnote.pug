@@ -24,7 +24,8 @@ block content
 
   div(id='editor') Note text
 
-  br
+  script.
+    var noteid = '#{id}';
 
   script(type='text/javascript' src='https://cdn.quilljs.com/1.2.2/quill.js')
   script(type='text/javascript' src='/javascripts/viewnote/viewnote.js')

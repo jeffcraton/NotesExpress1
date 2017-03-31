@@ -3,7 +3,10 @@
 //
 
 $(document).ready(function () {
+
     $(document).tooltip();
+
+    alert(noteid);
 
     //
     // execute after the page has been loaded
