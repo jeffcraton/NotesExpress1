@@ -32,6 +32,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="models\note.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="public\javascripts\addnote\addnote.js">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
