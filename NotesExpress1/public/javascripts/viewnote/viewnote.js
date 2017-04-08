@@ -1,9 +1,10 @@
 ﻿//
 // set up objects for viewnote.
 //
-
 $(document).ready(function () {
-
+    //
+    // set up tooltips
+    //
     $(document).tooltip();
 
     //alert(noteid);
@@ -23,8 +24,23 @@ $(document).ready(function () {
     $("#icoTrash").click(function () {
         //alert("Handler for trash.click() called.");
     });
-    $("#currentdate").text(new Date());
     //
-    // how do I tell if this is a new note?
+    // load associated note data
     //
+    $.ajax({
+        url: '/notesapi/' + noteid,
+        success: function (xdata) {
+            //
+            // set article values
+            //
+            $("#currentdate").html( xdata["CreationDate"] );
+            $("#notesubject").val(xdata["Subject"]);
+            quill.setContents( JSON.parse( xdata["Body"] ) );
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('e-data: ' + JSON.stringify(data));
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
 });
