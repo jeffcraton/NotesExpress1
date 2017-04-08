@@ -41,7 +41,7 @@ $(document).ready(function () {
                 //
                 // redirect to root of articles
                 //
-                window.location.href("/");
+                window.location.href = "/";
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('e-data: ' + JSON.stringify(data));
