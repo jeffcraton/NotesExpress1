@@ -16,21 +16,14 @@ $(document).ready(function () {
     //
     $("#icoSave").click(function () {
         var vSubject = $("#notesubject").val();
+        var vTags = $("#notetags").val();
         // reverse is JSON.parse
-        var vBody =  JSON.stringify( quill.getContents() );
+        var vBody = JSON.stringify(quill.getContents());
         var vData = {
             Subject: vSubject,
             Body: vBody,
+            Tags: vTags,
         };
-        // Assign handlers immediately after making the request,
-        // and remember the jqxhr object for this request
-        /*var jqxhr = $.post("/notesapi",vData).done(function () {
-                alert("second success");
-        }).fail(function () {
-                alert("error");
-        }).always(function () {
-            alert("finished");
-        }); */
 
         $.ajax({
             type: 'POST',

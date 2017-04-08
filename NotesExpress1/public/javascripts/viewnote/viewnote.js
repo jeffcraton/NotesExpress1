@@ -22,16 +22,18 @@ $(document).ready(function () {
     //
     $("#icoSave").click(function () {
         var vSubject = $("#notesubject").val();
+        var vTags = $("#notetags").val();
         // reverse is JSON.parse
         var vBody = JSON.stringify(quill.getContents());
         var vData = {
             _id: vArticleData["_id"],
             Subject: vSubject,
             Body: vBody,
+            Tags: vTags,
             CreationDate: vArticleData["CreationDate"],
             CreationName: vArticleData["CreationName"],
             RevisionName: vArticleData["RevisionName"],
-            RevisionDate: vArticleData["RevisionDate"],
+            RevisionDate: new Date(),
         };
 
         $.ajax({
@@ -89,6 +91,7 @@ $(document).ready(function () {
             vArticleData = xdata;
             $("#currentdate").html( xdata["CreationDate"] );
             $("#notesubject").val(xdata["Subject"]);
+            $("#notetags").val(xdata["Tags"]);
             quill.setContents( JSON.parse( xdata["Body"] ) );
         },
         error: function (jqXHR, textStatus, errorThrown) {
