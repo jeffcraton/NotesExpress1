@@ -65,6 +65,8 @@
     <Compile Include="public\javascripts\viewnote\viewnote.js">
       <SubType>Code</SubType>
     </Compile>
+    <Content Include="public\images\abstract-data.jpg" />
+    <Content Include="public\images\maxresdefault.jpg" />
     <Content Include="views\addnote.pug">
       <SubType>Code</SubType>
     </Content>

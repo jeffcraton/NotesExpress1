@@ -27,7 +27,6 @@ $(document).ready(function () {
                             url: '/notesapi/' + rowvalues["_id"],
                             //data: JSON.stringify(vData),
                             success: function (data) {
-                                alert('s-data: ' + JSON.stringify(data));
                                 //
                                 // redirect to root of articles
                                 //
@@ -55,9 +54,9 @@ $(document).ready(function () {
                 data: xdata,
                 deleteConfirm: "Do you really want to delete this note?",
                 fields: [
-                    { name: "CreationDate", type: "text", width: 50, title:"Creation Date"},
-                    { name: "Subject", type: "text", width: 100, title: "Subject" },
-                    { name: "RevisionDate", type: "text", width: 50, title: "Revision Date" },
+                    { name: "CreationDate", type: "text", width: "auto", title:"Creation Date"},
+                    { name: "Subject", type: "text", width: "auto", title: "Subject" },
+                    { name: "RevisionDate", type: "text", width: "auto", title: "Revision Date" },
                     { name: "_id", type: "text", visible: false },
                     { type: "control" }
                 ]

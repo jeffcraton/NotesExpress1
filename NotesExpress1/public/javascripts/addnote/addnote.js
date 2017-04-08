@@ -9,7 +9,8 @@ $(document).ready(function () {
     // execute after the page has been loaded
     //
     var quill = new Quill('#editor', {
-        theme: 'snow'
+        theme: 'snow',
+        background: "#c0c0c0",
     });
     //
     // style buttons
