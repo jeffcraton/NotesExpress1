@@ -4,6 +4,8 @@ var path = require("path");
 var index_1 = require("./routes/index");
 var user_1 = require("./routes/user");
 var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');

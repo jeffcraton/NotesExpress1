@@ -15,23 +15,39 @@ $(document).ready(function () {
     // style buttons
     //
     $("#icoSave").click(function () {
-        var vSubject = "Test subject information";
-        var vBody = "this is test data";
+        var vSubject = $("#notesubject").val();
+        // reverse is JSON.parse
+        var vBody =  JSON.stringify( quill.getContents() );
+        var vData = {
+            subject: vSubject,
+            body: vBody,
+        };
         // Assign handlers immediately after making the request,
         // and remember the jqxhr object for this request
-        var jqxhr = $.post("/notesapi", { subject: vSubject, body: vBody }).done(function () {
+        /*var jqxhr = $.post("/notesapi",vData).done(function () {
                 alert("second success");
         }).fail(function () {
                 alert("error");
         }).always(function () {
             alert("finished");
-        });
+        }); */
 
-        // Perform other work here ...
-
-        // Set another completion function for the request above
-        jqxhr.always(function () {
-            alert("second finished");
+        $.ajax({
+            type: 'POST',
+            url: '/notesapi',
+            data: JSON.stringify(vData),
+            success: function (data) {
+                //alert('s-data: ' + JSON.stringify(data));
+                //
+                // redirect to root of articles
+                //
+                window.location.href("/");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('e-data: ' + JSON.stringify(data));
+            },
+            contentType: "application/json",
+            dataType: 'json'
         });
     });
 });

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $(document).tooltip();
 
-    alert(noteid);
+    //alert(noteid);
 
     //
     // execute after the page has been loaded

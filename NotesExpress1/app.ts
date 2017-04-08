@@ -5,6 +5,8 @@ import routes from './routes/index';
 import users from './routes/user';
 
 var app = express();
+var bodyParser = require('body-parser')
+app.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
