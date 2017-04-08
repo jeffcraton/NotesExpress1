@@ -19,8 +19,8 @@ $(document).ready(function () {
         // reverse is JSON.parse
         var vBody =  JSON.stringify( quill.getContents() );
         var vData = {
-            subject: vSubject,
-            body: vBody,
+            Subject: vSubject,
+            Body: vBody,
         };
         // Assign handlers immediately after making the request,
         // and remember the jqxhr object for this request

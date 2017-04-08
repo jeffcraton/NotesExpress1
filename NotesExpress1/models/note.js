@@ -10,12 +10,12 @@ mongoose.connect('mongodb://127.0.0.1/notesapp')
     .catch((err) => console.error(err));
 
 var NoteSchema = new mongoose.Schema({
-    subject: String,
-    body: String,
-    creationname: { type: String, default: "ADMIN" },
-    creationdate: { type: Date, default: Date.now },
-    revisionname: { type: String, default: "" },
-    revisiondate: { type: Date, default: Date.now },
+    Subject: String,
+    Body: String,
+    CreationName: { type: String, default: "ADMIN" },
+    CreationDate: { type: Date, default: Date.now },
+    RevisionName: { type: String, default: "" },
+    RevisionDate: { type: Date, default: Date.now },
 });
 
 // Create a model based on the schema
