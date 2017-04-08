@@ -8,16 +8,41 @@ $(document).ready(function () {
     $.ajax({
         url: '/notesapi',
         success: function (xdata) {
-            //alert('s-data: ' + JSON.stringify(data));
             //
             // redirect to root of articles
             //
-            //window.location.href = "/";
-
             $("#jsGrid").jsGrid({
                 width: "100%",
-                height: "400px",
+                height: "auto",
+                controller: {
+                    loadData: $.noop,
+                    insertItem: $.noop,
+                    updateItem: function (args) {
+                        alert(JSON.stringify(args));
+                    },
+                    deleteItem: function (rowvalues) {
 
+                        $.ajax({
+                            type: 'DELETE',
+                            url: '/notesapi/' + rowvalues["_id"],
+                            //data: JSON.stringify(vData),
+                            success: function (data) {
+                                alert('s-data: ' + JSON.stringify(data));
+                                //
+                                // redirect to root of articles
+                                //
+                                var vobj = 1;
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                alert('e-data: ' + JSON.stringify(data));
+                            },
+                            contentType: "application/json",
+                            dataType: 'json'
+                        });
+
+                    }
+                },
+                filtering: false,
                 inserting: false,
                 editing: false,
                 sorting: true,
@@ -28,12 +53,13 @@ $(document).ready(function () {
                     window.location.href = "/viewnote/" + idstr;
                 },
                 data: xdata,
-
+                deleteConfirm: "Do you really want to delete this note?",
                 fields: [
-                    { name: "CreationDate", type: "text", width: 50 },
-                    { name: "Subject", type: "text", width: 100 },
-                    { name: "RevisionDate", type: "text", width: 50 },
-                    { name: "_id", type: "text", visible: false }
+                    { name: "CreationDate", type: "text", width: 50, title:"Creation Date"},
+                    { name: "Subject", type: "text", width: 100, title: "Subject" },
+                    { name: "RevisionDate", type: "text", width: 50, title: "Revision Date" },
+                    { name: "_id", type: "text", visible: false },
+                    { type: "control" }
                 ]
             });
         },
@@ -43,16 +69,6 @@ $(document).ready(function () {
         contentType: "application/json",
         dataType: 'json'
     });
-
-
-    /*var notesObj = [
-        { "DateAdded": "2017-03-17", "Subject": "Test 1", "DateUpdated": "2017-03-22", "id": "sdfsdf1"},
-        { "DateAdded": "2017-03-18", "Subject": "Test 2", "DateUpdated": "2017-03-22", "id": "sdfsdf2" },
-        { "DateAdded": "2017-03-19", "Subject": "Test 3", "DateUpdated": "2017-03-22", "id": "sdfsdf3" },
-        { "DateAdded": "2017-03-20", "Subject": "Test 4", "DateUpdated": "2017-03-22", "id": "sdfsdf4" },
-        { "DateAdded": "2017-03-21", "Subject": "Test 5", "DateUpdated": "2017-03-22", "id": "sdfsdf5" }
-    ]; */
-
 
     $("#icoCreate").click(function () {
         window.location.href = "/addnote";

@@ -1,6 +1,8 @@
 ﻿//
 // set up objects for viewnote.
 //
+var vArticleData = [];
+
 $(document).ready(function () {
     //
     // set up tooltips
@@ -19,10 +21,61 @@ $(document).ready(function () {
     // style buttons
     //
     $("#icoSave").click(function () {
-        //alert("Handler for save.click() called.");
+        var vSubject = $("#notesubject").val();
+        // reverse is JSON.parse
+        var vBody = JSON.stringify(quill.getContents());
+        var vData = {
+            _id: vArticleData["_id"],
+            Subject: vSubject,
+            Body: vBody,
+            CreationDate: vArticleData["CreationDate"],
+            CreationName: vArticleData["CreationName"],
+            RevisionName: vArticleData["RevisionName"],
+            RevisionDate: vArticleData["RevisionDate"],
+        };
+
+        $.ajax({
+            type: 'PUT',
+            url: '/notesapi/' + noteid,
+            data: JSON.stringify(vData),
+            success: function (data) {
+                //alert('s-data: ' + JSON.stringify(data));
+                //
+                // redirect to root of articles
+                //
+                window.location.href = "/";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('e-data: ' + JSON.stringify(data));
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
     });
     $("#icoTrash").click(function () {
-        //alert("Handler for trash.click() called.");
+        //
+        // delete article. on success, redirecct to root.
+        //
+        $.ajax({
+            type: 'DELETE',
+            url: '/notesapi/' + vArticleData["_id"],
+            //data: JSON.stringify(vData),
+            success: function (data) {
+                //
+                // redirect to root of articles
+                //
+                window.location.href = "/";
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                //
+                // something went wrong. show the data.
+                //
+                alert(errorThrown);
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+
     });
     //
     // load associated note data
@@ -33,6 +86,7 @@ $(document).ready(function () {
             //
             // set article values
             //
+            vArticleData = xdata;
             $("#currentdate").html( xdata["CreationDate"] );
             $("#notesubject").val(xdata["Subject"]);
             quill.setContents( JSON.parse( xdata["Body"] ) );

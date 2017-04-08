@@ -29,7 +29,6 @@ router.get('/notesapi', function (req, res, next) {
         res.json(notesdata);
     });
 });
-
 router.post('/notesapi', function (req, res, next) {
     NotesData.create(req.body, function (err, post) {
         if (err) return next(err);
@@ -43,7 +42,6 @@ router.get('/notesapi/:id', function (req, res, next) {
         res.json(post);
     });
 });
-
 /* PUT /notesapi/:id */
 router.put('/notesapi/:id', function (req, res, next) {
     NotesData.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
@@ -51,7 +49,6 @@ router.put('/notesapi/:id', function (req, res, next) {
         res.json(post);
     });
 });
-
 router.delete('/notesapi/:id', function (req, res, next) {
     NotesData.findByIdAndRemove(req.params.id, req.body, function (err, post) {
         if (err) return next(err);
