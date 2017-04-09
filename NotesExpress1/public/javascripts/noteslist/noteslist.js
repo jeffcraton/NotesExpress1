@@ -58,7 +58,7 @@ $(document).ready(function () {
                     { name: "Subject", type: "text", width: "auto", title: "Subject" },
                     { name: "RevisionDate", type: "text", width: "auto", title: "Revision Date" },
                     { name: "_id", type: "text", visible: false },
-                    { type: "control" }
+                    { type: "control", editButton: false  }
                 ]
             });
         },
