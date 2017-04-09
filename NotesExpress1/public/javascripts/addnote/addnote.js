@@ -12,18 +12,20 @@ $(document).ready(function () {
         theme: 'snow',
         background: "#c0c0c0",
     });
+
+    var notetaggle = new Taggle('notetags');
     //
     // style buttons
     //
     $("#icoSave").click(function () {
         var vSubject = $("#notesubject").val();
-        var vTags = $("#notetags").val();
+        var taglist = JSON.stringify(notetaggle.getTagValues() );
         // reverse is JSON.parse
         var vBody = JSON.stringify(quill.getContents());
         var vData = {
             Subject: vSubject,
             Body: vBody,
-            Tags: vTags,
+            Tags: taglist,
         };
 
         $.ajax({

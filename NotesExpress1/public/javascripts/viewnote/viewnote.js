@@ -10,6 +10,7 @@ $(document).ready(function () {
     $(document).tooltip();
 
     //alert(noteid);
+    var notetaggle = new Taggle('notetags');
 
     //
     // execute after the page has been loaded
@@ -23,14 +24,14 @@ $(document).ready(function () {
     //
     $("#icoSave").click(function () {
         var vSubject = $("#notesubject").val();
-        var vTags = $("#notetags").val();
+        var taglist = JSON.stringify(notetaggle.getTagValues());
         // reverse is JSON.parse
         var vBody = JSON.stringify(quill.getContents());
         var vData = {
             _id: vArticleData["_id"],
             Subject: vSubject,
             Body: vBody,
-            Tags: vTags,
+            Tags: taglist,
             CreationDate: vArticleData["CreationDate"],
             CreationName: vArticleData["CreationName"],
             RevisionName: vArticleData["RevisionName"],
@@ -92,8 +93,9 @@ $(document).ready(function () {
             vArticleData = xdata;
             $("#currentdate").html( xdata["CreationDate"] );
             $("#notesubject").val(xdata["Subject"]);
-            $("#notetags").val(xdata["Tags"]);
-            quill.setContents( JSON.parse( xdata["Body"] ) );
+            notetaggle.add( JSON.parse( xdata["Tags"] ) );
+            quill.setContents(JSON.parse(xdata["Body"]));
+
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert('e-data: ' + JSON.stringify(data));
