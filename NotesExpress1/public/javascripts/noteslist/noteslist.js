@@ -54,8 +54,9 @@ $(document).ready(function () {
                 data: xdata,
                 deleteConfirm: "Do you really want to delete this note?",
                 fields: [
-                    { name: "CreationDate", type: "text", width: "auto", title:"Creation Date"},
                     { name: "Subject", type: "text", width: "auto", title: "Subject" },
+                    { name: "Tags", type: "text", width: "auto", title: "Tags" },
+                    { name: "CreationDate", type: "text", width: "auto", title:"Creation Date"},
                     { name: "RevisionDate", type: "text", width: "auto", title: "Revision Date" },
                     { name: "_id", type: "text", visible: false },
                     { type: "control", editButton: false  }
