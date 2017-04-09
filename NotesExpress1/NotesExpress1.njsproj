@@ -62,11 +62,38 @@
     <Compile Include="public\javascripts\noteslist\noteslist.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\jquery-1.10.1.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\jquery-ui.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\rainbow-custom.min.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\scripts.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\taggle.min.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\Gruntfile.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\karma.conf.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\src\taggle-ie8.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\src\taggle-ie9.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\src\taggle.js" />
+    <Compile Include="public\javascripts\taggle.js-1.11.1\test\taggle-test.js" />
     <Compile Include="public\javascripts\viewnote\viewnote.js">
       <SubType>Code</SubType>
     </Compile>
     <Content Include="public\images\abstract-data.jpg" />
     <Content Include="public\images\maxresdefault.jpg" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\.editorconfig" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\.eslintrc" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\.gitignore" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\.travis.yml" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\bower.json" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\css\projects.min.css" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\css\taggle.css" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\css\taggle.min.css" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\css\twilight.css" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\images\bg.png" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\index.html" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\example\scss\taggle.scss" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\MIT-LICENSE.txt" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\package.json" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\README.md" />
+    <Content Include="public\javascripts\taggle.js-1.11.1\test\.eslintrc" />
     <Content Include="views\addnote.pug">
       <SubType>Code</SubType>
     </Content>
@@ -132,6 +159,14 @@
     <Folder Include="public\javascripts\jsgrid-1.5.3\i18n\" />
     <Folder Include="public\javascripts\demo\" />
     <Folder Include="public\javascripts\addnote\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\example\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\example\css\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\example\images\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\example\js\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\example\scss\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\src\" />
+    <Folder Include="public\javascripts\taggle.js-1.11.1\test\" />
     <Folder Include="public\javascripts\viewnote\" />
     <Folder Include="public\javascripts\noteslist\" />
     <Folder Include="public\shtml\" />
