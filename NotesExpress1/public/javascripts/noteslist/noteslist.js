@@ -49,7 +49,7 @@ $(document).ready(function () {
                 rowClick: function (args) {
                     var idx = args["itemIndex"];
                     var idstr = xdata[idx]["_id"];
-                    window.location.href = "/viewnote/" + idstr;
+                    window.location.href = "/notes/viewnote/" + idstr;
                 },
                 data: xdata,
                 deleteConfirm: "Do you really want to delete this note?",
@@ -71,6 +71,10 @@ $(document).ready(function () {
     });
 
     $("#icoCreate").click(function () {
-        window.location.href = "/addnote";
+        window.location.href = "/notes/addnote";
+    });
+
+    $("#icoSearch").click(function () {
+        window.location.href = "/notes/searchnotes";
     });
 });

@@ -1,4 +1,9 @@
-﻿body {
+﻿html {
+    background: url(/images/backgrounds_bg_for_web-655x483.png);
+    background-size: cover;
+}
+
+body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

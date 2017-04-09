@@ -1,12 +1,16 @@
 ﻿extends layout
 
 block content
-  h1= title
+  h2= title
   p #{title}
 
   button(class='ui-button ui-widget ui-corner-all', id='icoCreate', title='Create a Note') 
     span(class='ui-icon ui-icon-note') 
     span Create a Note
+
+  button(class='ui-button ui-widget ui-corner-all', id='icoSearch', title='Search Notes') 
+    span(class='ui-icon ui-icon-search') 
+    span Search Notes
 
   div(id='jsGrid')
   

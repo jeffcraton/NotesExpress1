@@ -8,14 +8,14 @@ var NotesData = require('../models/note.js');
 router.get('/', function (req, res) {
     res.render('index', { title: 'Manage your notes' });
 });
-router.get('/noteslist', function (req, res) {
-    res.render('noteslist', { title: 'List Notes' });
-});
-router.get('/viewnote/:id', function (req, res) {
+router.get('/notes/viewnote/:id', function (req, res) {
     res.render('viewnote', { title: 'View Note', id: req.params["id"] });
 });
-router.get('/addnote', function (req, res) {
+router.get('/notes/addnote', function (req, res) {
     res.render('addnote', { title: 'Add a new note', id: req.params["id"] });
+});
+router.get('/notes/searchnotes', function (req, res) {
+    res.render('searchnotes', { title: 'Search Notes' });
 });
 /* GET /notesapi listing. */
 router.get('/notesapi', function (req, res, next) {

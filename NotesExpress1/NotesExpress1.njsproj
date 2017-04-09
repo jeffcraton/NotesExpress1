@@ -77,6 +77,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Content Include="public\images\abstract-data.jpg" />
+    <Content Include="public\images\backgrounds_bg_for_web-655x483.png" />
     <Content Include="public\images\maxresdefault.jpg" />
     <Content Include="public\javascripts\taggle.js-1.11.1\.editorconfig" />
     <Content Include="public\javascripts\taggle.js-1.11.1\.eslintrc" />
@@ -101,6 +102,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\noteslist.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\searchnotes.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\viewnote.pug">
