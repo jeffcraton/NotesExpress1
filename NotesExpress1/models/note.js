@@ -23,3 +23,11 @@ var NoteSchema = new mongoose.Schema({
 
 // Create a model based on the schema
 module.exports = mongoose.model('NotesData', NoteSchema);
+
+var TagSchema = new mongoose.Schema({
+    Tag: String,
+    CreationDate: { type: Date, default: Date.now }
+});
+
+// Create a model based on the schema
+module.exports = mongoose.model('TagData', NoteSchema);
