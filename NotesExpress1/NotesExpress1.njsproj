@@ -32,7 +32,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="models\note.js">
+    <Compile Include="models\models.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="public\javascripts\addnote\addnote.js">

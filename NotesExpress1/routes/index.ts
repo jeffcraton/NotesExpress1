@@ -4,8 +4,7 @@
 import express = require('express');
 const router = express.Router();
 
-var Schema = require('../models/note.js');
-
+var Schema = require('../models/models.js');
 
 router.get('/', (req: express.Request, res: express.Response) => {
     res.render('index', { title: 'Manage your notes' });
