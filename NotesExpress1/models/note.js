@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1/notesapp')
+mongoose.connect('mongodb://appuser:12345678@127.0.0.1/notesapp')
     .then(() => console.log('connection succesful'))
     .catch((err) => console.error(err));
 
@@ -21,13 +21,20 @@ var NoteSchema = new mongoose.Schema({
     RemoteIpAddress: {type: String, default: ""}
 });
 
-// Create a model based on the schema
-module.exports = mongoose.model('NotesData', NoteSchema);
-
 var TagSchema = new mongoose.Schema({
-    Tag: String,
-    CreationDate: { type: Date, default: Date.now }
+    TagName: String,
+    CreationDate: { type: Date, default: Date.now },
+});
+
+var TodoSchema = new mongoose.Schema({
+    TodoTitle: String,
+    CreationName: { type: String, default: "ADMIN" },
+    CreationDate: { type: Date, default: Date.now },
+    RevisionName: { type: String, default: "" },
+    RevisionDate: { type: Date, default: Date.now },
 });
 
 // Create a model based on the schema
-module.exports = mongoose.model('TagData', NoteSchema);
+module.exports.NotesData = mongoose.model('NotesData', NoteSchema);
+module.exports.TodoData = mongoose.model('TodoData', TodoSchema);
+module.exports.TagData = mongoose.model('TagData', TagSchema);

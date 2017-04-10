@@ -4,7 +4,7 @@
  */
 var express = require("express");
 var router = express.Router();
-var NotesData = require('../models/note.js');
+var Schema = require('../models/note.js');
 router.get('/', function (req, res) {
     res.render('index', { title: 'Manage your notes' });
 });
@@ -19,14 +19,14 @@ router.get('/notes/searchnotes', function (req, res) {
 });
 /* GET /notesapi listing. */
 router.get('/notesapi', function (req, res, next) {
-    NotesData.find(function (err, notesdata) {
+    Schema.NotesData.find(function (err, notesdata) {
         if (err)
             return next(err);
         res.json(notesdata);
     });
 });
 router.post('/notesapi', function (req, res, next) {
-    NotesData.create(req.body, function (err, post) {
+    Schema.NotesData.create(req.body, function (err, post) {
         if (err)
             return next(err);
         res.json(post);
@@ -34,7 +34,22 @@ router.post('/notesapi', function (req, res, next) {
 });
 /* GET /notesapi/id */
 router.get('/notesapi/:id', function (req, res, next) {
-    NotesData.findById(req.params.id, function (err, post) {
+    Schema.NotesData.findById(req.params.id, function (err, post) {
+        if (err)
+            return next(err);
+        res.json(post);
+    });
+});
+/* search */
+router.get('/notesapi/searchtags/:findstr', function (req, res, next) {
+    Schema.NotesData.findById(req.params.findstr, function (err, post) {
+        if (err)
+            return next(err);
+        res.json(post);
+    });
+});
+router.get('/notesapi/searchsubject/:findstr', function (req, res, next) {
+    Schema.NotesData.findById(req.params.findstr, function (err, post) {
         if (err)
             return next(err);
         res.json(post);
@@ -42,14 +57,14 @@ router.get('/notesapi/:id', function (req, res, next) {
 });
 /* PUT /notesapi/:id */
 router.put('/notesapi/:id', function (req, res, next) {
-    NotesData.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+    Schema.NotesData.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
         if (err)
             return next(err);
         res.json(post);
     });
 });
 router.delete('/notesapi/:id', function (req, res, next) {
-    NotesData.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+    Schema.NotesData.findByIdAndRemove(req.params.id, req.body, function (err, post) {
         if (err)
             return next(err);
         res.json(post);
