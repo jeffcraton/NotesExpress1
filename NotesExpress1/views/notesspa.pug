@@ -1,0 +1,19 @@
+﻿extends layout
+
+block content
+  h2= title
+  p #{title}
+
+  script(type='text/javascript' src='/ang/angular.js')
+  script(type='text/javascript' src='https://cdn.quilljs.com/1.2.2/quill.js')
+  script(type='text/javascript' src='/javascripts/notesspa/notesspa.js')
+
+  ul
+    li(ng-repeat="note in notes")
+      span {{note.creationdate}}
+      span {{note.subject}}
+      span {{note.keywords}}
+      span {{note.revisiondate}}
+      span edit
+      span delete
+

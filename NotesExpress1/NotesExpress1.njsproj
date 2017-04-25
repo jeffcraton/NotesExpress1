@@ -62,6 +62,9 @@
     <Compile Include="public\javascripts\noteslist\noteslist.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="public\javascripts\notesspa\notesspa.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\jquery-1.10.1.js" />
     <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\jquery-ui.js" />
     <Compile Include="public\javascripts\taggle.js-1.11.1\example\js\rainbow-custom.min.js" />
@@ -102,6 +105,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\noteslist.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\notesspa.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\searchnotes.pug">
@@ -163,6 +169,7 @@
     <Folder Include="public\javascripts\jsgrid-1.5.3\i18n\" />
     <Folder Include="public\javascripts\demo\" />
     <Folder Include="public\javascripts\addnote\" />
+    <Folder Include="public\javascripts\notesspa\" />
     <Folder Include="public\javascripts\taggle.js-1.11.1\" />
     <Folder Include="public\javascripts\taggle.js-1.11.1\example\" />
     <Folder Include="public\javascripts\taggle.js-1.11.1\example\css\" />

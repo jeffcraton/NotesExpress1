@@ -14,6 +14,7 @@ app.use('/', index_1.default);
 app.use('/noteslist', index_1.default);
 app.use('/viewnote', index_1.default);
 app.use('/users', user_1.default);
+app.use('/ang', express.static(__dirname + '/node_modules/angular/'));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

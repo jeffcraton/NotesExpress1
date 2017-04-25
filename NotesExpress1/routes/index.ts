@@ -22,6 +22,10 @@ router.get('/notes/searchnotes', (req: express.Request, res: express.Response) =
     res.render('searchnotes', { title: 'Search Notes' });
 });
 
+router.get('/notes/notesspa', (req: express.Request, res: express.Response) => {
+    res.render('notesspa', { title: 'Notes Angular Application' });
+});
+
 /* GET /notesapi listing. */
 router.get('/notesapi', function (req, res, next) {
     Schema.NotesData.find(function (err, notesdata) {

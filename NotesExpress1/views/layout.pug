@@ -1,5 +1,5 @@
 ﻿doctype html
-html
+html(ng-app='notesApplication')
   head
     title= title
 
@@ -19,6 +19,7 @@ html
     script(type='text/javascript' src='/javascripts/taggle.js-1.11.1/src/taggle-ie9.js')
     script(type='text/javascript' src='/javascripts/taggle.js-1.11.1/src/taggle.js')
 
-  body
+
+  body(ng-controller='notesController')
     block content
 
